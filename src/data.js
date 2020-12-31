@@ -1,22 +1,53 @@
 module.exports.testData = [
     {
-        text: '哈哈', children: [{
-            text: '哈哈Children'
-        }]
+        title: '0-0',
+        key: '0-0',
+        children: [
+            {
+                title: '0-0-0',
+                key: '0-0-0',
+                children: [
+                    { title: '0-0-0-0', key: '0-0-0-0' },
+                    { title: '0-0-0-1', key: '0-0-0-1' },
+                    { title: '0-0-0-2', key: '0-0-0-2' },
+                ],
+            },
+            {
+                title: '0-0-1',
+                key: '0-0-1',
+                children: [
+                    { title: '0-0-1-0', key: '0-0-1-0' },
+                    { title: '0-0-1-1', key: '0-0-1-1' },
+                    { title: '0-0-1-2', key: '0-0-1-2' },
+                ],
+            },
+            {
+                title: '0-0-2',
+                key: '0-0-2',
+            },
+        ],
     },
     {
-        text: '呵呵', children: [
-            {
-                text: '测试', children: [{
-                    text: '嘻嘻', children: [
-                        { text: '剋了', children: [
-                            { text: 'iopl配' }
-                        ] }
-                    ]
-                }, {
-                    text: '嘎巴'
-                }]
-            }
-        ]
-    }
+        title: '0-1',
+        key: '0-1',
+        children: [
+            { title: '0-1-0-0', key: '0-1-0-0' },
+            { title: '0-1-0-1', key: '0-1-0-1' },
+            { title: '0-1-0-2', key: '0-1-0-2' },
+        ],
+    },
+    {
+        title: '0-2',
+        key: '0-2',
+    },
+];
+
+module.exports.originArr = [
+    { id: 1, parentId: 0 },
+    { id: 2, parentId: 1 },
+    { id: 3, parentId: 2 },
+    { id: 4, parentId: 3 },
+    { id: 5, parentId: 2 },
+    { id: 6, parentId: 4 },
+    { id: 7, parentId: 0 },
 ]

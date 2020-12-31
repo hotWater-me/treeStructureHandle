@@ -1,4 +1,4 @@
-const { testData } = require('./data')
+const { testData, originArr } = require('./data')
 
 class RecursionHalle {
     constructor(props) { }
@@ -24,10 +24,13 @@ class RecursionHalle {
         if (true) {
             return delUndefined;
         }
-    }
+    };
+
+
 }
 
 let useFun = new RecursionHalle();
 
 
-console.log(useFun.convertData(testData, 'text')); // 第二个参数为你想拿到的值
+console.log(useFun.convertData(testData, 'title')); // 第二个参数为你想拿到的值
+

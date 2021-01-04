@@ -3,6 +3,10 @@ const { testData, originArr } = require('./data')
 class RecursionHalle {
 	constructor(props) { }
 
+	delUndefined(inCome) {
+		return Array.from(new Set(inCome)).filter((ele) => { if (ele) { return true } })
+	}
+
 	// 数结构数据,return为一个数组,里面的元素键名自选
 	convertData(testData, selEle) {
 		let allele = [];
@@ -11,7 +15,7 @@ class RecursionHalle {
 				if (item.children) {
 					const curExu = logicEquivalent(item.children, item[selEle]);
 					curExu.push(item[selEle], par);
-					Array.prototype.push.apply(allele, curExu)
+					Array.prototype.push.apply(allele, curExu);
 				} else {
 					return item[selEle];
 				}
@@ -20,10 +24,7 @@ class RecursionHalle {
 			return childrenMap;
 		};
 		logicEquivalent(testData);
-		const delUndefined = Array.from(new Set(allele)).filter((ele) => { if (ele) { return true } });
-		if (true) {
-			return delUndefined;
-		}
+		return this.delUndefined(allele);
 	};
 
 	// 生成树结构数据
@@ -51,11 +52,29 @@ class RecursionHalle {
 		});
 		return res;
 	}
+	// 生成路径
+	nodePath(originData, customSymbol) {
+		const setData = [];
+		const haddlePath = (originData, tempData) => {
+			const eachMap = originData.map((item) => {
+				if (item.children) {
+					if (tempData) {
+						haddlePath(item.children, `${tempData} ${customSymbol} ${item.title}`);
+					} else {
+						haddlePath(item.children, item.title)
+					}
+				} else {
+					if (tempData) {
+						return `${tempData} ${customSymbol} ${item.title}`;
+					} else {
+						return item.title;
+					}
+				}
+			});
+			Array.prototype.push.apply(setData, eachMap);
+		}
+		haddlePath(originData);
+		return this.delUndefined(setData);
+	}
 }
 
-let useFun = new RecursionHalle();
-
-
-// console.log(useFun.convertData(testData, 'title')); // 第二个参数为你想拿到的值
-
-console.log(JSON.stringify(useFun.arrToTreeData(originArr), null, 2))

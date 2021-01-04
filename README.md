@@ -1,3 +1,33 @@
-# treeHaddle
+/**
+  * 获取树结构数据某一个键值
+*/
+convertData(原数组: uniteObject[],  想获得的键名: string);
 
-#get每个节点值  convertData(data, ele)   ele: 想要得到的节点值
+/**
+  * 将一维数组转化为树结构类型数据
+*/
+arrToTreeData(原数组: arrToTreeDataType[])
+
+/**
+  * 获得树结构类型数据的路径
+*/
+nodePath(原数组: uniteObject[], 连接符号: string);
+
+/**
+  * TODO 
+  树结构键名自定义
+  每一个节点生成一条路径
+  路径可视写法
+*/
+
+
+
+types  
+interface uniteObject {
+  title: 'string',
+  key: 'string',
+  children:  uniteObject[]
+}
+interface arrToTreeDataType {
+  id: number, parentId: number
+}

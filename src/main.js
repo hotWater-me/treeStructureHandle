@@ -78,12 +78,3 @@ class RecursionHalle {
 	}
 }
 
-let useFun = new RecursionHalle();
-
-
-
-
-// console.log(useFun.convertData(testData, 'title')); // convertData(原数组: uniteObject[],  想获得的键名: string)
-// console.log(useFun.arrToTreeData(originArr)) // arrToTreeData(原数组: {id: number, parentId: number}[])
-// console.log(useFun.nodePath(testData, '<')) // nodePath(原数组: uniteObject[], 连接符号: string);
-

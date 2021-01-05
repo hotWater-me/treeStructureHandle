@@ -78,5 +78,3 @@ class RecursionHalle {
 		return this.delUndefined(setData);
 	}
 }
-
-console.log(new RecursionHalle().nodePath(testData, "<"))

@@ -56,16 +56,17 @@ class RecursionHalle {
 	nodePath(originData, customSymbol) {
 		const setData = [];
 		const haddlePath = (originData, tempData) => {
+			const templateString = (item) => `${tempData} ${customSymbol} ${item.title}`;
 			const eachMap = originData.map((item) => {
 				if (item.children) {
 					if (tempData) {
-						haddlePath(item.children, `${tempData} ${customSymbol} ${item.title}`);
+						haddlePath(item.children, templateString(item));
 					} else {
 						haddlePath(item.children, item.title)
 					}
 				} else {
 					if (tempData) {
-						return `${tempData} ${customSymbol} ${item.title}`;
+						return templateString(item);
 					} else {
 						return item.title;
 					}
@@ -78,3 +79,4 @@ class RecursionHalle {
 	}
 }
 
+console.log(new RecursionHalle().nodePath(testData, "<"))

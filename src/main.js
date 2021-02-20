@@ -1,7 +1,9 @@
 const { testData, originArr } = require('./data')
 
 class RecursionHalle {
-	constructor(props) { }
+	constructor() {
+		this.getMatchNode = {};
+	}
 
 	delUndefined(inCome) {
 		return Array.from(new Set(inCome)).filter((ele) => { if (ele) { return true } })
@@ -77,4 +79,20 @@ class RecursionHalle {
 		haddlePath(originData);
 		return this.delUndefined(setData);
 	}
+
+	// 获取节点的子节点
+	getChildNode(originData, keyName, nodeName) {
+		originData.forEach((item) => {
+			// 终止循环
+			if (Object.keys(this.getMatchNode).length) return;
+			if (item[keyName] !== nodeName) {
+				if (item.children) return this.getChildNode(item.children, keyName, nodeName);
+			} else {
+				this.getMatchNode[keyName] = item;
+			}
+		});
+	  return this.getMatchNode;
+	}
 }
+
+export const RecursionHalles = new RecursionHalle();

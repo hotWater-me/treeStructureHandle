@@ -20,7 +20,9 @@ nodePath(原数组: uniteObject[], 连接符号: string);
 getChildNode(原数组: uniteObject[], 键名: string, 键值: string);
 
 
-* Types  
+/**
+* Types
+*/  
 interface uniteObject {
   title: 'string',
   key: 'string',

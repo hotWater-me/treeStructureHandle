@@ -13,16 +13,14 @@ arrToTreeData(原数组: arrToTreeDataType[])
 */
 nodePath(原数组: uniteObject[], 连接符号: string);
 
+
 /**
-  * TODO 
-  树结构键名自定义
-  每一个节点生成一条路径
-  路径可视写法
+  * 获得节点的子节点
 */
+getChildNode(原数组: uniteObject[], 键名: string, 键值: string);
 
 
-
-types  
+* Types  
 interface uniteObject {
   title: 'string',
   key: 'string',

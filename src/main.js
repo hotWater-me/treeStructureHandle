@@ -83,8 +83,6 @@ class RecursionHalle {
 	// 获取节点的子节点
 	getChildNode(originData, keyName, nodeName) {
 		originData.forEach((item) => {
-			// 终止循环
-			if (Object.keys(this.getMatchNode).length) return;
 			if (item[keyName] !== nodeName) {
 				if (item.children) return this.getChildNode(item.children, keyName, nodeName);
 			} else {

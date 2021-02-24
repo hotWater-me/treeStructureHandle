@@ -15,14 +15,12 @@ nodePath(原数组: uniteObject[], 连接符号: string);
 
 
 /**
-  * 获得节点的子节点
+  * 获取节点的子节点
 */
 getChildNode(原数组: uniteObject[], 键名: string, 键值: string);
 
 
-/**
-* Types
-*/  
+Types  
 interface uniteObject {
   title: 'string',
   key: 'string',

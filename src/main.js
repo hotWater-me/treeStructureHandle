@@ -55,7 +55,7 @@ class RecursionHalle {
 		return res;
 	}
 	// 生成路径
-	nodePath(originData, customSymbol) {
+	nodePath(originData, keyName, customSymbol) {
 		const setData = [];
 		const haddlePath = (originData, tempData) => {
 			const templateString = (item) => `${tempData} ${customSymbol} ${item.title}`;
@@ -64,13 +64,13 @@ class RecursionHalle {
 					if (tempData) {
 						haddlePath(item.children, templateString(item));
 					} else {
-						haddlePath(item.children, item.title)
+						haddlePath(item.children, item[keyName])
 					}
 				} else {
 					if (tempData) {
 						return templateString(item);
 					} else {
-						return item.title;
+						return item[keyName];
 					}
 				}
 			});
@@ -89,8 +89,8 @@ class RecursionHalle {
 				this.getMatchNode[keyName] = item;
 			}
 		});
-	  return this.getMatchNode;
+		return this.getMatchNode;
 	}
 }
 
-export const RecursionHalles = new RecursionHalle();
+const RecursionHalles = new RecursionHalle();

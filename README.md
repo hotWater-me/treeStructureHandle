@@ -1,3 +1,4 @@
+✨ API
 /**
   🌈 获取树结构数据某一个键值
 */
@@ -23,6 +24,19 @@ getChildNode(原数组: uniteObject[], 键名: string, 键值: string);
  🌈 为每个节点插入属性
 */
 insertAttr(原数组: uniteObject[], 要插入的对象: { [key: string]: any })
+
+/**
+ 🌈 为节点替换键名
+*/
+replaceKeyName(原数组: uniteObject[], 要替换的对象: { [key: string]: any })
+
+
+✨ Utils
+/**
+ 🌈 为节点替换键名
+*/
+renameKeys(要替换的键名: { [key: string]: string }, 原数据: { [key: string]: string })
+
 
 
 Types  

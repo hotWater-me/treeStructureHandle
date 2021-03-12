@@ -106,4 +106,3 @@ class RecursionHalle {
 }
 
 const RecursionHalles = new RecursionHalle();
-console.log(JSON.stringify(RecursionHalles.insertAttr(testData, { name: '88' }), null, 2))

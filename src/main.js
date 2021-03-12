@@ -102,7 +102,25 @@ class RecursionHalle {
 			return Object.assign(item, insertObj);
 		});
 		return tempData;
-	}
+	};
+
+	// 为节点替换键名
+	renameKeys(keysMap, obj) {
+		return Object.keys(obj).reduce((acc, key) => Object.assign(acc, {
+			[keysMap[key] || key]: obj[key]
+		}), {});
+	};
+	replaceKeyName(originData, replaceObj) {
+		const tempData = originData.map((item) => {
+			if (item.children) {
+				const childrenElement = this.replaceKeyName(item.children, replaceObj);
+				const currentEle = Object.assign(item, { children: childrenElement });
+				return this.renameKeys(replaceObj, currentEle);
+			}
+			return this.renameKeys(replaceObj, item);
+		});
+		return tempData;
+	};
 }
 
 const RecursionHalles = new RecursionHalle();

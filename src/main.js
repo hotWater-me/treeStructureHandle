@@ -91,6 +91,19 @@ class RecursionHalle {
 		});
 		return this.getMatchNode;
 	}
+
+	// 为每个节点插入属性
+	insertAttr(originData, insertObj) {
+		const tempData = originData.map((item) => {
+			if (item.children) {
+				const childrenElement = this.insertAttr(item.children, insertObj);
+				return Object.assign(item, insertObj, { children: childrenElement });
+			}
+			return Object.assign(item, insertObj);
+		});
+		return tempData;
+	}
 }
 
 const RecursionHalles = new RecursionHalle();
+console.log(JSON.stringify(RecursionHalles.insertAttr(testData, { name: '88' }), null, 2))

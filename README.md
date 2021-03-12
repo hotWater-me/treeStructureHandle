@@ -19,6 +19,11 @@ nodePath(原数组: uniteObject[], 键名: string ,连接符号: string);
 */
 getChildNode(原数组: uniteObject[], 键名: string, 键值: string);
 
+/**
+ *为每个节点插入属性
+*/
+insertAttr(原数组: uniteObject[], 要插入的对象: { [key: string]: any })
+
 
 Types  
 interface uniteObject {

@@ -3,6 +3,7 @@ const { testData, originArr } = require('./data')
 class RecursionHalle {
 	constructor() {
 		this.getMatchNode = {};
+		this.nodeCountProps = 0;
 	}
 
 	delUndefined(inCome) {
@@ -121,6 +122,22 @@ class RecursionHalle {
 		});
 		return tempData;
 	};
+
+	// 获得节点的个数
+	// 计算节点数目
+	nodeCount(originData) {
+		originData.forEach((ele) => {
+			if (ele.children) {
+				this.nodeCountProps += ele.children.length;
+				this.nodeCount(ele.children);
+			}
+		});
+		return this.nodeCountProps
+	}
+	getnodeCount(testData) {
+		const firstLevel = testData.length;
+		return this.nodeCount(testData) + firstLevel
+	}
 }
 
 const RecursionHalles = new RecursionHalle();

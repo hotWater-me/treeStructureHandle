@@ -1,0 +1,22 @@
+{
+  "name": "treehaddle",
+  "version": "1.0.0",
+  "description": "Tree structure data processing method",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hotWater-me/treeHaddle.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hotWater-me/treeHaddle/issues"
+  },
+  "homepage": "https://github.com/hotWater-me/treeHaddle#readme",
+  "devDependencies": {
+    "power-assert": "^1.6.1"
+  }
+}

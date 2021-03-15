@@ -39,7 +39,7 @@ replaceKeyName(原数组: uniteObject[], 要替换的对象: { [key: string]: an
 
 
 /**
- 🌈 为节点替换键名
+ 🌈 对象替换键名
 */
 renameKeys(要替换的键名: { [key: string]: string }, 原数据: { [key: string]: string })
 

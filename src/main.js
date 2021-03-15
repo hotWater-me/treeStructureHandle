@@ -124,3 +124,4 @@ class RecursionHalle {
 }
 
 const RecursionHalles = new RecursionHalle();
+module.exports = RecursionHalles;

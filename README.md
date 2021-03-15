@@ -43,6 +43,10 @@ replaceKeyName(原数组: uniteObject[], 要替换的对象: { [key: string]: an
 */
 renameKeys(要替换的键名: { [key: string]: string }, 原数据: { [key: string]: string })
 
+/**
+ 🌈 去重并去除undefined
+*/
+delUndefined(原数组: any[])
 
 
 ## ✨ Types  

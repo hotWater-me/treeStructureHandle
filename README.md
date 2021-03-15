@@ -32,7 +32,10 @@ insertAttr(原数组: uniteObject[], 要插入的对象: { [key: string]: any })
 */
 replaceKeyName(原数组: uniteObject[], 要替换的对象: { [key: string]: any })
 
-
+/**
+ 🌈 获得节点的个数
+*/
+getnodeCount(原数组: uniteObject[])
 
 
 ## ✨ Utils

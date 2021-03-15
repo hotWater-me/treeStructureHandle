@@ -41,5 +41,12 @@ describe('treeHaddle', () => {
     it('获得节点的个数', () => {
         expect(RecursionHalles.getnodeCount(testData)).to.be.equal(expecConvert.length);
     });
+
+    it('为节点替换键名', () => {
+        // 把里面的titlt替换为id
+        const hasReplace = RecursionHalles.replaceKeyName(testData, { title: 'id' });
+        // 获取里面keyName的数组集合
+        expect(RecursionHalles.convertData(hasReplace, 'id')).to.have.members(expecConvert);
+    });
     
 })

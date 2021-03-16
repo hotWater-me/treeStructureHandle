@@ -4,7 +4,9 @@
   "description": "Tree structure data processing method",
   "main": "main.js",
   "scripts": {
-    "test": "mocha ./src/test.js"
+    "test": "mocha ./src/test.js",
+    "testCoverage": "nyc mocha ./src/test.js",
+    "testCoverage-html": "nyc --reporter=html mocha  ./src/test.js"
   },
   "repository": {
     "type": "git",
@@ -17,7 +19,8 @@
   },
   "homepage": "https://github.com/hotWater-me/treeHaddle#readme",
   "devDependencies": {
-    "chai": "^4.3.4",
-    "mocha": "^8.3.2"
+    "cc": "^4.3.4",
+    "mocha": "^8.3.2",
+    "nyc": "^15.1.0"
   }
 }

@@ -1,5 +1,3 @@
-const { testData, originArr } = require('./data')
-
 class RecursionHalle {
 	constructor() {
 		this.getMatchNode = {};
@@ -34,7 +32,7 @@ class RecursionHalle {
 	arrToTreeData(arr) {
 		let copy = JSON.parse(JSON.stringify(arr));
 		let obj = {};
-		copy.forEach((item, index) => {
+		copy.forEach((item) => {
 			obj[item.id] = item;
 		});
 		let res = [];
@@ -44,12 +42,7 @@ class RecursionHalle {
 			}
 			for (var key in obj) {
 				if (item.id === obj[key].parentId) {
-					// 处理数据children
-					if (item.children) {
-						item.children.push(obj[key]);
-					} else {
-						item.children = [obj[key]];
-					}
+					item.children = [obj[key]];
 				}
 			}
 		});
@@ -62,16 +55,10 @@ class RecursionHalle {
 			const templateString = (item) => `${tempData} ${customSymbol} ${item.title}`;
 			const eachMap = originData.map((item) => {
 				if (item.children) {
-					if (tempData) {
-						haddlePath(item.children, templateString(item));
-					} else {
-						haddlePath(item.children, item[keyName])
-					}
+					haddlePath(item.children, item[keyName])
 				} else {
 					if (tempData) {
 						return templateString(item);
-					} else {
-						return item[keyName];
 					}
 				}
 			});
@@ -137,7 +124,7 @@ class RecursionHalle {
 	getnodeCount(testData) {
 		const firstLevel = testData.length;
 		return this.nodeCount(testData) + firstLevel
-	}
+	};
 }
 
 const RecursionHalles = new RecursionHalle();

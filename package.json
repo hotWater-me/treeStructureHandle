@@ -19,8 +19,8 @@
   },
   "homepage": "https://github.com/hotWater-me/treeStructureHandle#readme",
   "devDependencies": {
-    "cc": "^4.3.4",
     "mocha": "^8.3.2",
-    "nyc": "^15.1.0"
+    "nyc": "^15.1.0",
+    "chai": "^4.3.4"
   }
 }

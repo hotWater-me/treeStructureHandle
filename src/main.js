@@ -55,12 +55,10 @@ class RecursionHalle {
 			const templateString = (item) => `${tempData} ${customSymbol} ${item.title}`;
 			const eachMap = originData.map((item) => {
 				if (item.children) {
-					haddlePath(item.children, item[keyName])
-				} else {
-					if (tempData) {
-						return templateString(item);
-					}
-				}
+					haddlePath(item.children, item[keyName]);
+					return;
+				};
+				return templateString(item);
 			});
 			Array.prototype.push.apply(setData, eachMap);
 		}

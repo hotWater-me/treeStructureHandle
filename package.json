@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hotWater-me/treeHaddle.git"
+    "url": "git+https://github.com/hotWater-me/treeStructureHandle.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hotWater-me/treeHaddle/issues"
+    "url": "https://github.com/hotWater-me/treeStructureHandle/issues"
   },
-  "homepage": "https://github.com/hotWater-me/treeHaddle#readme",
+  "homepage": "https://github.com/hotWater-me/treeStructureHandle#readme",
   "devDependencies": {
     "cc": "^4.3.4",
     "mocha": "^8.3.2",

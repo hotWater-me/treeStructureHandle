@@ -2,7 +2,7 @@
   "name": "treehaddle",
   "version": "1.0.0",
   "description": "Tree structure data processing method",
-  "main": "main.js",
+  "main": "src/main.js",
   "scripts": {
     "test": "mocha ./src/test.js",
     "testCoverage": "nyc mocha ./src/test.js",

@@ -48,4 +48,8 @@ describe('treeHaddle', () => {
     it('生成树结构数据路径', () => {
         expect(RecursionHalles.nodePath(insertAttrTest, 'title', '-')).to.have.members(nodePathTest);
     });
+
+    it('一维化数据', () => {
+        expect(RecursionHalles.downGradeData(testData).length).to.be.equal(expecConvert.length);
+    });
 })

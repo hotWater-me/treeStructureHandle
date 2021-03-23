@@ -123,6 +123,23 @@ class RecursionHalle {
 		const firstLevel = testData.length;
 		return this.nodeCount(testData) + firstLevel
 	};
+
+	// 一维化数据
+	downGradeData(originData, accTemp = []) {
+		return originData.reduce((acc, cur) => {
+			if (cur.children) {
+				const filterData = Object.keys(cur).filter((item) => item !== 'children');
+				const convertData = filterData.reduce((accumulator, currentValue) => {
+					accumulator[currentValue] = cur[currentValue];
+					return accumulator;
+				}, {});
+				accTemp.push(convertData)
+				return this.downGradeData(cur.children, accTemp);
+			}
+			acc.push(cur);
+			return acc;
+		}, accTemp)
+	}
 }
 
 const RecursionHalles = new RecursionHalle();

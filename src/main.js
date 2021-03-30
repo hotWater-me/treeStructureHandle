@@ -5,7 +5,7 @@ class RecursionHalle {
 	}
 
 	delUndefined(inCome) {
-		return Array.from(new Set(inCome)).filter((ele) => { if (ele) { return true } })
+		return Array.from(new Set(inCome)).filter((ele) => Boolean(ele))
 	}
 
 	// 数结构数据,return为一个数组,里面的元素键名自选

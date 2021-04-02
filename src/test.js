@@ -1,7 +1,9 @@
-const RecursionHalles = require('./main');
+const RecursionHalle = require('./main');
 const { testData, originArr } = require('./data');
-const { objTest, testArr, expecConvert, arrToTreeTest, getChildNodeTest, insertAttrTest, newInsertAttrTest, nodePathTest } = require('./ unitTestData')
+const { objTest, testArr, expecConvert, arrToTreeTest, getChildNodeTest, insertAttrTest, newInsertAttrTest, nodePathTest, downInsertAttrTest } = require('./ unitTestData')
 const { expect } = require('chai');
+
+const RecursionHalles = new RecursionHalle();
 const { renameKeys, delUndefined } = RecursionHalles;
 
 describe('Utils', () => {
@@ -48,8 +50,9 @@ describe('treeHaddle', () => {
     it('生成树结构数据路径', () => {
         expect(RecursionHalles.nodePath(insertAttrTest, 'title', '-')).to.have.members(nodePathTest);
     });
-
     it('一维化数据', () => {
-        expect(RecursionHalles.downGradeData(testData).length).to.be.equal(expecConvert.length);
+        expect(RecursionHalles.downGradeData(testData, 'title').length).to.be.equal(expecConvert.length);
+        expect(RecursionHalles.downGradeData(newInsertAttrTest, 'title')).to.deep.equal(downInsertAttrTest);
     });
+
 })

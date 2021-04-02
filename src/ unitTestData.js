@@ -11,8 +11,8 @@ module.exports.expecConvert = [
     '0-0', '0-0-1-0',
     '0-0-1-1', '0-0-1-2',
     '0-0-1', '0-0-2',
-    '0-1-0-0', '0-1-0-1',
-    '0-1-0-2', '0-1',
+    '0-1-0', '0-1-1',
+    '0-1-2', '0-1',
     '0-2'
 ];
 
@@ -42,9 +42,9 @@ module.exports.getChildNodeTest = {
     title: '0-1',
     key: '0-1',
     children: [
-        { title: '0-1-0-0', key: '0-1-0-0' },
-        { title: '0-1-0-1', key: '0-1-0-1' },
-        { title: '0-1-0-2', key: '0-1-0-2' },
+        { title: '0-1-0', key: '0-1-0' },
+        { title: '0-1-1', key: '0-1-1' },
+        { title: '0-1-2', key: '0-1-2' },
     ],
 }
 
@@ -52,9 +52,9 @@ module.exports.insertAttrTest = [
     {
         title: '0-1',
         children: [
-            { title: '0-1-0-0' },
-            { title: '0-1-0-1' },
-            { title: '0-1-0-2' },
+            { title: '0-1-0' },
+            { title: '0-1-1' },
+            { title: '0-1-2' },
         ],
     }
 ];
@@ -62,12 +62,18 @@ module.exports.insertAttrTest = [
 module.exports.newInsertAttrTest = [
     {
         title: '0-1',
-        key:'666',
+        key: '666',
         children: [
-            { title: '0-1-0-0', key:'666' },
-            { title: '0-1-0-1', key:'666' },
-            { title: '0-1-0-2', key:'666' },
+            { title: '0-1-0', key: '666' },
+            { title: '0-1-1', key: '666' },
+            { title: '0-1-2', key: '666' },
         ],
     }
 ];
-module.exports.nodePathTest =[ '0-1 - 0-1-0-0', '0-1 - 0-1-0-1', '0-1 - 0-1-0-2' ]
+module.exports.nodePathTest = ['0-1 - 0-1-0', '0-1 - 0-1-1', '0-1 - 0-1-2'];
+module.exports.downInsertAttrTest = [
+    { title: '0-1', id: '0-1', parendId: 'root', key: '666' },
+    { title: '0-1-0', key: '666', id: '0-1-0', parendId: '0-1' },
+    { title: '0-1-1', key: '666', id: '0-1-1', parendId: '0-1' },
+    { title: '0-1-2', key: '666', id: '0-1-2', parendId: '0-1' }
+]

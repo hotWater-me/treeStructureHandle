@@ -125,22 +125,26 @@ class RecursionHalle {
 	};
 
 	// 一维化数据
-	downGradeData(originData, accTemp = []) {
+	downGradeData(originData, idValue, parentValue ,accTemp = []) {
 		return originData.reduce((acc, cur) => {
 			if (cur.children) {
 				const filterData = Object.keys(cur).filter((item) => item !== 'children');
 				const convertData = filterData.reduce((accumulator, currentValue) => {
 					accumulator[currentValue] = cur[currentValue];
+					accumulator['id'] = cur[idValue];
+					accumulator['parendId'] = parentValue ? parentValue[idValue] : 'root';
 					return accumulator;
 				}, {});
 				accTemp.push(convertData)
-				return this.downGradeData(cur.children, accTemp);
+				return this.downGradeData(cur.children, idValue, cur , accTemp);
 			}
+			cur['id'] = cur[idValue];
+			cur['parendId'] = parentValue ?  parentValue[idValue] : 'root';
 			acc.push(cur);
 			return acc;
 		}, accTemp)
 	}
 }
 
-const RecursionHalles = new RecursionHalle();
-module.exports = RecursionHalles;
+module.exports = RecursionHalle;
+module.exports.treeRecursionHalle = new RecursionHalle();

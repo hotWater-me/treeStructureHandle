@@ -40,7 +40,7 @@ getnodeCount(原数组: uniteObject[])
 /**
  🌈 一维化数据
 */
-downGradeData(原数组: uniteObject[])
+downGradeData(原数组: uniteObject[],id读取的key: string)
 
 
 ## ✨ Utils

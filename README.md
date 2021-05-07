@@ -1,3 +1,10 @@
+## 🔨 Usage
+```jsx
+import RecursionHalle,  { treeRecursionHalle } from 'tree-structure-handle';
+
+treeRecursionHalle.convertData(原数组: uniteObject[],  想获得的键名: string);
+```
+
 ## ✨ API
 
 

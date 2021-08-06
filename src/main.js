@@ -2,6 +2,9 @@ class RecursionHalle {
   constructor() {
     this.getMatchNode = {};
     this.nodeCountProps = 0;
+    // 层级相关属性
+    this.level = 0;
+    this.coreMapLeveal = {};
   }
 
   delUndefined(inCome) {
@@ -161,6 +164,24 @@ class RecursionHalle {
       acc.push(cur);
       return acc;
     }, accTemp);
+  };
+
+  //层级遍历
+  levelTraversal(originData) {
+    const lenvelData  = [];
+    const childData = [];
+    originData.map((item, index) => {
+      if(item.children) {
+        Array.prototype.push.apply(childData, item.children);
+      }
+      lenvelData.push(item);
+      if(index === originData.length -1) {
+        this.coreMapLeveal[this.level] = lenvelData;
+        this.level += 1;
+        this.levelTraversal(childData);
+      }
+    });
+    return this.coreMapLeveal;
   }
 }
 

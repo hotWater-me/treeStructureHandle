@@ -1,6 +1,6 @@
 const RecursionHalle = require('./main');
 const { testData, originArr } = require('./data');
-const { objTest, testArr, expecConvert, arrToTreeTest, getChildNodeTest, insertAttrTest, newInsertAttrTest, nodePathTest, downInsertAttrTest } = require('./ unitTestData')
+const { objTest, testArr, expecConvert, arrToTreeTest, getChildNodeTest, insertAttrTest, newInsertAttrTest, nodePathTest, downInsertAttrTest,levelTraversal, levelTraversalTest } = require('./ unitTestData')
 const { expect } = require('chai');
 
 const RecursionHalles = new RecursionHalle();
@@ -54,5 +54,7 @@ describe('treeHaddle', () => {
         expect(RecursionHalles.downGradeData(testData, 'title').length).to.be.equal(expecConvert.length);
         expect(RecursionHalles.downGradeData(newInsertAttrTest, 'title')).to.deep.equal(downInsertAttrTest);
     });
-
+    it('层级遍历', () => {
+        expect(RecursionHalles.levelTraversal(levelTraversal)).to.deep.equal(levelTraversalTest);
+    });
 })

@@ -99,6 +99,11 @@ export declare namespace treeRecursionHalle {
     idValue: string,
   ): any[];
 
+  /** 层级遍历 */
+    function levelTraversal(
+      originData: uniteObject[],
+    ): object;
+
   /** 去重并去除undefined */
   function delUndefined(inCome: any[]): string[];
 

@@ -76,4 +76,39 @@ module.exports.downInsertAttrTest = [
     { title: '0-1-0', key: '666', id: '0-1-0', parendId: '0-1' },
     { title: '0-1-1', key: '666', id: '0-1-1', parendId: '0-1' },
     { title: '0-1-2', key: '666', id: '0-1-2', parendId: '0-1' }
-]
+];
+module.exports.levelTraversal = [{
+    title: '0-1',
+    children: [{
+            title: '0-1-0'
+        },
+        {
+            title: '0-1-1'
+        },
+        {
+            title: '0-1-2'
+        },
+    ],
+}];
+module.exports.levelTraversalTest = {
+    '0': [{
+        title: '0-1',
+        children: [{
+                title: '0-1-0'
+            },
+            {
+                title: '0-1-1'
+            },
+            {
+                title: '0-1-2'
+            },
+        ]
+    }],
+    '1': [{
+        title: '0-1-0'
+    }, {
+        title: '0-1-1'
+    }, {
+        title: '0-1-2'
+    }]
+}

@@ -21,7 +21,7 @@ arrToTreeData(原数组: arrToTreeDataType[])
 /**
   🌈 获得树结构类型数据的路径
 */
-nodePath(原数组: uniteObject[], 键名: string ,连接符号: string);
+nodePath(原数组: uniteObject[], 键名: string ,连接符号: string, 前缀: string);
 
 
 /**

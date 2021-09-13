@@ -52,7 +52,7 @@ class RecursionHalle {
     return res;
   }
   // 生成路径
-  nodePath(originData, keyName, customSymbol) {
+  nodePath(originData, keyName, customSymbol, Prefix) {
     const setData = [];
     const defaultSymbol = customSymbol ? customSymbol : ",";
     const haddlePath = (originData, tempData) => {
@@ -76,7 +76,7 @@ class RecursionHalle {
       });
       Array.prototype.push.apply(setData, eachMap);
     };
-    haddlePath(originData);
+    haddlePath(originData, Prefix);
     return this.delUndefined(setData);
   }
 

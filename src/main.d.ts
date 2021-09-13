@@ -22,7 +22,8 @@ export default class RecursionHalle {
   nodePath(
     originData: uniteObject[],
     keyName: string,
-    customSymbol: string
+    customSymbol: string,
+    Prefix: string
   ): string[];
 
   /** 获取节点的子节点 */

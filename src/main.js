@@ -54,14 +54,14 @@ class RecursionHalle {
   // 生成路径
   nodePath(originData, keyName, customSymbol, Prefix) {
     const setData = [];
-    const defaultSymbol = customSymbol ? customSymbol : ",";
+    const defaultSymbol = customSymbol ? customSymbol : ',';
     const haddlePath = (originData, tempData) => {
       const eachMap = originData.map((item) => {
         if (item.children) {
           if (tempData) {
             haddlePath(
               item.children,
-              `${tempData} ${defaultSymbol} ${item[keyName]}`
+              `${tempData} ${defaultSymbol} ${item[keyName]}`,
             );
           } else {
             haddlePath(item.children, item[keyName]);
@@ -112,7 +112,7 @@ class RecursionHalle {
         Object.assign(acc, {
           [keysMap[key] || key]: obj[key],
         }),
-      {}
+      {},
     );
   }
   replaceKeyName(originData, replaceObj) {
@@ -148,34 +148,34 @@ class RecursionHalle {
     return originData.reduce((acc, cur) => {
       if (cur.children) {
         const filterData = Object.keys(cur).filter(
-          (item) => item !== "children"
+          (item) => item !== 'children',
         );
         const convertData = filterData.reduce((accumulator, currentValue) => {
           accumulator[currentValue] = cur[currentValue];
-          accumulator["id"] = cur[idValue];
-          accumulator["parendId"] = parentValue ? parentValue[idValue] : "root";
+          accumulator['id'] = cur[idValue];
+          accumulator['parendId'] = parentValue ? parentValue[idValue] : 'root';
           return accumulator;
         }, {});
         accTemp.push(convertData);
         return this.downGradeData(cur.children, idValue, cur, accTemp);
       }
-      cur["id"] = cur[idValue];
-      cur["parendId"] = parentValue ? parentValue[idValue] : "root";
+      cur['id'] = cur[idValue];
+      cur['parendId'] = parentValue ? parentValue[idValue] : 'root';
       acc.push(cur);
       return acc;
     }, accTemp);
-  };
+  }
 
   //层级遍历
   levelTraversal(originData) {
-    const lenvelData  = [];
+    const lenvelData = [];
     const childData = [];
     originData.map((item, index) => {
-      if(item.children) {
+      if (item.children) {
         Array.prototype.push.apply(childData, item.children);
       }
       lenvelData.push(item);
-      if(index === originData.length -1) {
+      if (index === originData.length - 1) {
         this.coreMapLeveal[this.level] = lenvelData;
         this.level += 1;
         this.levelTraversal(childData);

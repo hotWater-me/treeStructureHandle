@@ -11,6 +11,35 @@ class RecursionHalle {
     return Array.from(new Set(inCome)).filter((ele) => Boolean(ele));
   }
 
+  /**
+   * @param originData {array_1: any[],  array_2: any[]  }
+   * @param method  diff | inter
+   */
+
+  interDiff(originData, method) {
+    const {  array_1, array_2 } = originData;
+    const basicType = ['object', 'function'];
+    const juageArrayEle = (oriEle) => !basicType.includes(typeof oriEle);
+    const juageArrayObj = (oriObj) => oriObj instanceof Object;
+
+    if(!(array_1 instanceof Array ) && !(array_2 instanceof Array ))  {
+      return '只支持数组';
+    };
+    // 数组元素，不支持数组元素为基本类型和引用类型
+    if(array_1.every(ele => juageArrayEle(ele)) && array_2.every(ele => juageArrayEle(ele))) {
+      if(method === 'diff') {
+         return array_1.concat(array_2).filter(v => !array_1.includes(v) || !array_2.includes(v));
+      }
+        return array_1.filter(v => array_2.includes(v));
+    }
+   if(array_1.every(ele => juageArrayObj(ele)) && array_2.every(ele => juageArrayObj(ele))) {
+    //TODO 数组对象的差集与并集
+     console.log('数组对象');
+     return;
+   };
+   return '数据异常';
+  }
+
   // 数结构数据,return为一个数组,里面的元素键名自选
   convertData(testData, selEle) {
     let allele = [];

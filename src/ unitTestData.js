@@ -154,3 +154,34 @@ module.exports.levelTraversalTest = {
     },
   ],
 };
+module.exports.newInsertAttrTestOrign = [
+  {
+    title: '0-1',
+    key: '666',
+    children: [
+      { title: '0-1-0', key: '666' },
+      { title: '0-1-1', key: '666' },
+      { title: '0-1-2', key: '666' },
+    ],
+  },
+];
+module.exports.newInsertAttrTestReplace = [
+  {
+    title: '0-1',
+    key: 'replaceKey',
+    children: [
+      {
+        title: '0-1-0',
+        key: 'replaceKey',
+      },
+      {
+        title: '0-1-1',
+        key: 'replaceKey',
+      },
+      {
+        title: '0-1-2',
+        key: 'replaceKey',
+      },
+    ],
+  },
+];

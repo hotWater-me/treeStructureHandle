@@ -114,13 +114,20 @@ class RecursionHalle {
         }),
       {},
     );
-  }
-  replaceKeyName(originData, replaceObj) {
+  };
+  // 为每个节点替换键名
+  replaceKeyName(originData, replaceObj, savePre) {
     const tempData = originData.map((item) => {
       if (item.children) {
-        const childrenElement = this.replaceKeyName(item.children, replaceObj);
+        const childrenElement = this.replaceKeyName(item.children, replaceObj, savePre);
         const currentEle = Object.assign(item, { children: childrenElement });
+        if (savePre) {
+          return Object.assign(this.renameKeys(replaceObj, currentEle), item);
+        }
         return this.renameKeys(replaceObj, currentEle);
+      }
+      if (savePre) {
+        return Object.assign(this.renameKeys(replaceObj, item), item);
       }
       return this.renameKeys(replaceObj, item);
     });

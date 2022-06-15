@@ -64,10 +64,21 @@ describe('treeHaddle', () => {
     const hasReplace = RecursionHalles.replaceKeyName(testData, {
       title: 'id',
     });
-    // 获取里面keyName的数组集合
+    // 获取里面keyName - id的数组集合
     expect(RecursionHalles.convertData(hasReplace, 'id')).to.have.members(
       expecConvert,
     );
+    // 替换并保留原先键值对
+    const replaceAndSavePre = RecursionHalles.replaceKeyName(
+      hasReplace,
+      {
+        id: 'pre_id',
+      },
+      true,
+    );
+    expect(
+      RecursionHalles.convertData(replaceAndSavePre, 'id'),
+    ).to.have.members(expecConvert);
   });
 
   it('获得节点的个数', () => {
@@ -93,7 +104,7 @@ describe('treeHaddle', () => {
       RecursionHalles.nodePath(insertAttrTest, 'title', '>', 'preFix'),
     ).to.have.members(preNodePathTest);
     expect(RecursionHalles.nodePath(insertAttr, 'title')).to.have.members(
-      originPathTest
+      originPathTest,
     );
   });
   it('一维化数据', () => {

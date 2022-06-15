@@ -1,6 +1,6 @@
 {
   "name": "tree-structure-handle",
-  "version": "1.3.2",
+  "version": "1.3.4",
   "description": "Tree structure data processing method",
   "main": "src/main.js",
   "scripts": {

@@ -1,3 +1,4 @@
+### [在线Demo](https://codesandbox.io/s/dark-leaf-mbh31?file=/src/App.js) 参考test.js文件去测试
 ## 🔨 Usage
 ```jsx
 import RecursionHalle,  { treeRecursionHalle } from 'tree-structure-handle';
@@ -44,6 +45,10 @@ downGradeData(原数组: uniteObject[],id读取的key: string)
  🌈 层级遍历
 */
 levelTraversal(原数组: uniteObject[])
+
+ 🌈 修改treeData的键值
+*/
+replaceDataValue(原数组: uniteObject[], 要替换的对象: { [key: string]: any })
 
 
 ## ✨ Utils

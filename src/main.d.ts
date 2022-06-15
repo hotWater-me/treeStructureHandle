@@ -23,14 +23,14 @@ export default class RecursionHalle {
     originData: uniteObject[],
     keyName: string,
     customSymbol: string,
-    Prefix: string
+    Prefix: string,
   ): string[];
 
   /** 获取节点的子节点 */
   getChildNode(
     originData: uniteObject[],
     keyName: string,
-    nodeName: string
+    nodeName: string,
   ): objectType;
 
   /** 为每个节点插入属性 */
@@ -39,17 +39,14 @@ export default class RecursionHalle {
   /** 为节点替换键名 */
   replaceKeyName(
     originData: uniteObject[],
-    replaceObj: objectType
+    replaceObj: objectType,
   ): uniteObject[];
 
   /** 获得节点的个数 */
   getnodeCount(testData: uniteObject[]): number;
 
   /** 一维化数据 */
-  downGradeData(
-    originData: uniteObject[],
-    idValue: string,
-  ): any[];
+  downGradeData(originData: uniteObject[], idValue: string): any[];
 
   /** 去重并去除undefined */
   delUndefined(inCome: string[]): string[];
@@ -69,44 +66,45 @@ export declare namespace treeRecursionHalle {
   function nodePath(
     originData: uniteObject[],
     keyName: string,
-    customSymbol: string
+    customSymbol: string,
   ): string[];
 
   /** 获取节点的子节点 */
   function getChildNode(
     originData: uniteObject[],
     keyName: string,
-    nodeName: string
+    nodeName: string,
   ): objectType;
 
   /** 为每个节点插入属性 */
   function insertAttr(
     originData: uniteObject[],
-    insertObj: objectType
+    insertObj: objectType,
   ): uniteObject;
 
   /** 为节点替换键名 */
   function replaceKeyName(
     originData: uniteObject[],
-    replaceObj: objectType
+    replaceObj: objectType,
   ): uniteObject[];
 
   /** 获得节点的个数 */
   function getnodeCount(testData: uniteObject[]): number;
 
   /** 一维化数据 */
-  function downGradeData(
-    originData: uniteObject[],
-    idValue: string,
-  ): any[];
+  function downGradeData(originData: uniteObject[], idValue: string): any[];
 
   /** 层级遍历 */
-    function levelTraversal(
-      originData: uniteObject[],
-    ): object;
+  function levelTraversal(originData: uniteObject[]): object;
 
   /** 去重并去除undefined */
   function delUndefined(inCome: any[]): string[];
+
+  /** 修改treeData的键值 */
+  function replaceDataValue(
+    originData: uniteObject[],
+    replaceKey: objectType,
+  ): any[];
 
   /** 对象替换键名 */
   function renameKeys(keysMap: objectType, obj: objectType): objectType;

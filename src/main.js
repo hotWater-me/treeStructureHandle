@@ -1,3 +1,21 @@
+const {
+  objTest,
+  testArr,
+  expecConvert,
+  arrToTreeTest,
+  getChildNodeTest,
+  insertAttrTest,
+  newInsertAttrTest,
+  nodePathTest,
+  downInsertAttrTest,
+  levelTraversal,
+  levelTraversalTest,
+  defaultNodePathTest,
+  preNodePathTest,
+  insertAttr,
+  originPathTest,
+} = require('./ unitTestData');
+const { testData, originArr } = require('./data');
 class RecursionHalle {
   constructor() {
     this.getMatchNode = {};
@@ -189,6 +207,26 @@ class RecursionHalle {
       }
     });
     return this.coreMapLeveal;
+  }
+  // 修改treeData的键值
+  replaceDataValue(originData, replaceKey) {
+    let replaceMap = Object.keys(replaceKey);
+    let modifyValue = (eachItem) =>
+      replaceMap.forEach((each) => (eachItem[each] = replaceKey[each]));
+    const excuData = (data) => {
+      return data.map((item) => {
+        if (item.children) {
+          modifyValue(item);
+          const currentEle = Object.assign(item, {
+            children: excuData(item.children),
+          });
+          return currentEle;
+        }
+        modifyValue(item);
+        return item;
+      });
+    };
+    return excuData(originData);
   }
 }
 

@@ -16,6 +16,8 @@ const {
   preNodePathTest,
   insertAttr,
   originPathTest,
+  newInsertAttrTestReplace,
+  newInsertAttrTestOrign
 } = require('./ unitTestData');
 const { expect } = require('chai');
 
@@ -118,6 +120,11 @@ describe('treeHaddle', () => {
   it('层级遍历', () => {
     expect(RecursionHalles.levelTraversal(levelTraversal)).to.deep.equal(
       levelTraversalTest,
+    );
+  });
+  it('修改treeData的键值', () => {
+    expect(RecursionHalles.replaceDataValue(newInsertAttrTestOrign, {  key: 'replaceKey' })).to.deep.equal(
+      newInsertAttrTestReplace,
     );
   });
 });

@@ -52,7 +52,7 @@ export default class RecursionHalle {
   delUndefined(inCome: string[]): string[];
 
   /** 对象替换键名 */
-  renameKeys(keysMap: objectType, obj: objectType): objectType;
+  renameKeys(keysMap: objectType, obj: objectType, savePre?: Boolean): objectType;
 }
 
 export declare namespace treeRecursionHalle {

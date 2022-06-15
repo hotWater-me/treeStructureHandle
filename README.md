@@ -32,7 +32,7 @@ insertAttr(原数组: uniteObject[], 要插入的对象: { [key: string]: any })
 
  🌈 为节点替换键名
 */
-replaceKeyName(原数组: uniteObject[], 要替换的对象: { [key: string]: any })
+replaceKeyName(原数组: uniteObject[], 要替换的对象: { [key: string]: any }, 是否保存当前键值对?: Boolen)
 
  🌈 获得节点的个数
 */

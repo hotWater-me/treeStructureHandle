@@ -154,6 +154,42 @@ module.exports.levelTraversalTest = {
     },
   ],
 };
+module.exports.insertLevelData = [
+  {
+    title: '0-1',
+    children: [
+      {
+        title: '0-1-0',
+      },
+      {
+        title: '0-1-1',
+      },
+      {
+        title: '0-1-2',
+      },
+    ],
+  },
+];
+module.exports.insertLevelDataTest = [
+  {
+    title: '0-1',
+    level: 0,
+    children: [
+      {
+        title: '0-1-0',
+        level: 1,
+      },
+      {
+        title: '0-1-1',
+        level: 1,
+      },
+      {
+        title: '0-1-2',
+        level: 1,
+      },
+    ],
+  },
+];
 module.exports.newInsertAttrTestOrign = [
   {
     title: '0-1',

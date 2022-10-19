@@ -1,21 +1,3 @@
-const {
-  objTest,
-  testArr,
-  expecConvert,
-  arrToTreeTest,
-  getChildNodeTest,
-  insertAttrTest,
-  newInsertAttrTest,
-  nodePathTest,
-  downInsertAttrTest,
-  levelTraversal,
-  levelTraversalTest,
-  defaultNodePathTest,
-  preNodePathTest,
-  insertAttr,
-  originPathTest,
-} = require('./ unitTestData');
-const { testData, originArr } = require('./data');
 class RecursionHalle {
   constructor() {
     this.getMatchNode = {};
@@ -23,6 +5,8 @@ class RecursionHalle {
     // 层级相关属性
     this.level = 0;
     this.coreMapLeveal = {};
+    // 层级插入相关
+    this.levelInsert = 0;
   }
 
   delUndefined(inCome) {
@@ -137,7 +121,11 @@ class RecursionHalle {
   replaceKeyName(originData, replaceObj, savePre) {
     const tempData = originData.map((item) => {
       if (item.children) {
-        const childrenElement = this.replaceKeyName(item.children, replaceObj, savePre);
+        const childrenElement = this.replaceKeyName(
+          item.children,
+          replaceObj,
+          savePre,
+        );
         const currentEle = Object.assign(item, { children: childrenElement });
         if (savePre) {
           return Object.assign(this.renameKeys(replaceObj, currentEle), item);
@@ -208,6 +196,25 @@ class RecursionHalle {
     });
     return this.coreMapLeveal;
   }
+
+  //层级遍历插入level
+  insertLevel(originData) {
+    const childData = [];
+    originData.map((item, index) => {
+      if (item.children) {
+        item.level = this.levelInsert;
+        Array.prototype.push.apply(childData, item.children);
+      } else {
+        item.level = this.levelInsert;
+      }
+      if (index === originData.length - 1) {
+        this.levelInsert += 1;
+        this.insertLevel(childData);
+      }
+    });
+    return originData;
+  }
+
   // 修改treeData的键值
   replaceDataValue(originData, replaceKey) {
     let replaceMap = Object.keys(replaceKey);

@@ -46,6 +46,10 @@ downGradeData(原数组: uniteObject[],id读取的key: string)
 */
 levelTraversal(原数组: uniteObject[])
 
+ 🌈 层级遍历插入level
+*/
+insertLevel(原数组: uniteObject[])
+
  🌈 修改treeData的键值
 */
 replaceDataValue(原数组: uniteObject[], 要替换的对象: { [key: string]: any })

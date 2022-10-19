@@ -52,7 +52,11 @@ export default class RecursionHalle {
   delUndefined(inCome: string[]): string[];
 
   /** 对象替换键名 */
-  renameKeys(keysMap: objectType, obj: objectType, savePre?: Boolean): objectType;
+  renameKeys(
+    keysMap: objectType,
+    obj: objectType,
+    savePre?: Boolean,
+  ): objectType;
 }
 
 export declare namespace treeRecursionHalle {
@@ -96,6 +100,9 @@ export declare namespace treeRecursionHalle {
 
   /** 层级遍历 */
   function levelTraversal(originData: uniteObject[]): object;
+
+  /** 层级遍历插入level */
+  function insertLevel(originData: uniteObject[]): object;
 
   /** 去重并去除undefined */
   function delUndefined(inCome: any[]): string[];

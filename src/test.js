@@ -20,6 +20,8 @@ const {
   newInsertAttrTestOrign,
   insertLevelData,
   insertLevelDataTest,
+  insertParentRelaTestData,
+  insertParentRelaTestDataExpect,
 } = require('./ unitTestData');
 const { expect } = require('chai');
 
@@ -135,5 +137,10 @@ describe('treeHaddle', () => {
         key: 'replaceKey',
       }),
     ).to.deep.equal(newInsertAttrTestReplace);
+  });
+  it('添加parentId及关系路径', () => {
+    expect(
+      RecursionHalles.insertParentRela(insertParentRelaTestData),
+    ).to.deep.equal(insertParentRelaTestDataExpect);
   });
 });

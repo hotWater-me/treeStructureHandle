@@ -54,6 +54,10 @@ insertLevel(原数组: uniteObject[])
 */
 replaceDataValue(原数组: uniteObject[], 要替换的对象: { [key: string]: any })
 
+ 🌈 添加parentId及关系路径
+*/
+insertParentRela(原数组: uniteObject[])
+
 
 ## ✨ Utils
 

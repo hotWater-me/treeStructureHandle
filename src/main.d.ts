@@ -115,4 +115,7 @@ export declare namespace treeRecursionHalle {
 
   /** 对象替换键名 */
   function renameKeys(keysMap: objectType, obj: objectType): objectType;
+
+  /** 添加parentId及关系路径 */
+  function insertParentRela(originData: uniteObject[]): any[];
 }

@@ -235,6 +235,27 @@ class RecursionHalle {
     };
     return excuData(originData);
   }
+  // 添加parentId及关系路径
+  insertParentRela(originData, currentParentItem = '', nodePath = '') {
+    originData.map((item) => {
+      if (item.children) {
+        // 父节点ID
+        item.parendId = currentParentItem;
+        // 新的路径
+        const currentNodePath = nodePath
+          ? `${nodePath}>${item.key}`
+          : `${item.key}`;
+        // 节点路径
+        item.nodePath = currentNodePath;
+        return this.insertParentRela(item.children, item.key, currentNodePath);
+      }
+      item.parendId = currentParentItem;
+      // 节点路径
+      item.nodePath = nodePath ? `${nodePath}>${item.key}` : `${item.key}`;
+      return item;
+    });
+    return originData;
+  }
 }
 
 module.exports = RecursionHalle;

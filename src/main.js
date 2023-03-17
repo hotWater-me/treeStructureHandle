@@ -47,7 +47,12 @@ class RecursionHalle {
       }
       for (var key in obj) {
         if (item.id === obj[key].parentId) {
-          item.children = [obj[key]];
+          // item.children = [obj[key]];
+          if (item.children) {
+            item.children.push(obj[key]);
+          } else {
+            item.children = [obj[key]];
+          }
         }
       }
     });
@@ -256,6 +261,7 @@ class RecursionHalle {
     });
     return originData;
   }
+  // TODO 获取父节点
 }
 
 module.exports = RecursionHalle;

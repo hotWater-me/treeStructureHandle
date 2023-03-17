@@ -31,6 +31,16 @@ module.exports.arrToTreeTest = [
       {
         id: 2,
         parentId: 1,
+        children: [
+          {
+            id: 8,
+            parentId: 2,
+          },
+        ],
+      },
+      {
+        id: 9,
+        parentId: 1,
       },
     ],
   },
